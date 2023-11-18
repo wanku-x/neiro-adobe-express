@@ -1,0 +1,32 @@
+{
+    "extends": ["stylelint-config-standard", "stylelint-config-clean-order"],
+    "rules": {
+        "import-notation": null,
+        "order/order": [
+            [
+                { "type": "at-rule", "name": "import" },
+                { "type": "at-rule", "name": "forward" },
+                { "type": "at-rule", "name": "use" },
+                "dollar-variables",
+                "at-variables",
+                "custom-properties",
+                { "type": "at-rule", "name": "custom-media" },
+                { "type": "at-rule", "name": "function" },
+                { "type": "at-rule", "name": "extend" },
+                { "type": "at-rule", "name": "include" },
+                "declarations",
+                {
+                    "type": "rule",
+                    "selector": "/^&::[\\w-]+/",
+                    "hasBlock": true
+                },
+                "rules",
+                { "type": "at-rule", "name": "media", "hasBlock": true }
+            ],
+            {
+                "severity": "warning"
+            }
+        ],
+        "function-calc-no-unspaced-operator": null
+    }
+}
