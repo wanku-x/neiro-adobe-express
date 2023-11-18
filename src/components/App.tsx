@@ -10,7 +10,7 @@ import "@spectrum-web-components/theme/theme-light.js";
 import { Button } from "@swc-react/button";
 import { Theme } from "@swc-react/theme";
 import React, { useState } from "react";
-import "./App.css";
+import "./App.pcss";
 
 import { AddOnSDKAPI } from "https://new.express.adobe.com/static/add-on-sdk/sdk.js";
 
