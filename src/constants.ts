@@ -51,3 +51,35 @@ export const avatars: AvatarType[] = [
 		alt: 'oleg',
 	},
 ]
+
+export type LanguageType = {
+	value: string
+	label: string
+}
+
+export const languages: LanguageType[] = [
+	{
+		value: 'EN',
+		label: '🇺🇸 English',
+	},
+	{
+		value: 'PT-BR',
+		label: '🇵🇹 Portuguese',
+	},
+	{
+		value: 'ES-ES',
+		label: '🇪🇸 Spanish',
+	},
+	{
+		value: 'ID-ID',
+		label: '🇮🇩 Indonesian',
+	},
+	{
+		value: 'FR-FR',
+		label: '🇫🇷 French',
+	},
+	{
+		value: 'AR-AE',
+		label: '🇸🇦 Arabic',
+	},
+]

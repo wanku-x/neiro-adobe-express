@@ -9,11 +9,11 @@ import styles from './AvatarPicker.module.pcss'
 
 type AvatarPickerType = {
 	name: string
-	currentValue?: string
-	setValue: (value: string) => void
+	avatar?: string
+	setAvatar: (value: string) => void
 }
 
-function AvatarPicker({ name, currentValue, setValue }: AvatarPickerType) {
+function AvatarPicker({ name, avatar, setAvatar }: AvatarPickerType) {
 	return (
 		<fieldset className={styles.avatarPicker}>
 			<legend
@@ -31,10 +31,10 @@ function AvatarPicker({ name, currentValue, setValue }: AvatarPickerType) {
 						key={value}
 						name={name}
 						value={value}
-						checked={currentValue === value}
+						checked={avatar === value}
 						src={src}
 						alt={alt}
-						onChange={setValue}
+						onChange={setAvatar}
 					/>
 				))}
 			</div>

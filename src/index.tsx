@@ -1,8 +1,8 @@
 import '@spectrum-web-components/styles/typography.css'
 import '@spectrum-web-components/theme/express/scale-medium.js'
 import '@spectrum-web-components/theme/express/theme-light.js'
-// Import '@spectrum-web-components/theme/scale-medium.js'
-// import '@spectrum-web-components/theme/theme-light.js'
+import '@spectrum-web-components/theme/scale-medium.js'
+import '@spectrum-web-components/theme/theme-light.js'
 import '@/styles/global.pcss'
 
 import React from 'react'
