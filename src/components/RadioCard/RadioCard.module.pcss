@@ -1,0 +1,39 @@
+.radioCard {
+	cursor: pointer;
+	position: relative;
+	background-color: #d3d4d9;
+	border-radius: var(--spectrum-spacing-100);
+
+	&__input {
+		@mixin visually-hidden;
+	}
+
+	&__overlay {
+		position: absolute;
+		inset: 0;
+		border-radius: var(--spectrum-spacing-100);
+	}
+
+	&__image {
+		display: block;
+
+		aspect-ratio: 1;
+		width: 100%;
+
+		object-fit: cover;
+		border-radius: var(--spectrum-spacing-100);
+	}
+
+	@mixin hover &__overlay {
+		background-color: var(--spectrum-transparent-black-200);
+	}
+
+	&__input:checked ~ &__overlay {
+		border: var(--spectrum-spacing-50) solid var(--spectrum-indigo-800);
+	}
+
+	&__input:focus-visible ~ &__overlay {
+		outline: var(--spectrum-spacing-50) solid var(--spectrum-blue-800);
+		outline-offset: var(--spectrum-spacing-50);
+	}
+}

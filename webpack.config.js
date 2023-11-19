@@ -41,12 +41,15 @@ module.exports = {
 				exclude: /node_modules/,
 			},
 			{
-				test: /(\.pcss)$/,
+				test: /(\.pcss|css)$/,
 				use: ['style-loader', 'css-loader', 'postcss-loader'],
 			},
 		],
 	},
 	resolve: {
 		extensions: ['.tsx', '.ts', '.js', '.pcss'],
+		alias: {
+			'@': path.resolve(__dirname, 'src'),
+		},
 	},
 }

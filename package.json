@@ -21,9 +21,13 @@
         "panel"
     ],
     "dependencies": {
+        "@spectrum-css/typography": "^5.0.48",
+        "@spectrum-css/vars": "^9.0.8",
         "@spectrum-web-components/theme": "0.38.0",
         "@swc-react/button": "0.38.0",
         "@swc-react/theme": "0.38.0",
+        "class-variance-authority": "^0.7.0",
+        "normalize.css": "^8.0.1",
         "react": "18.2.0",
         "react-dom": "18.2.0"
     },
@@ -49,6 +53,8 @@
         "lint-staged": "^15.1.0",
         "postcss": "^8.4.31",
         "postcss-loader": "^7.3.3",
+        "postcss-mixins": "^9.0.4",
+        "postcss-nested": "^6.0.1",
         "postcss-preset-env": "^9.3.0",
         "prettier": "^3.1.0",
         "style-loader": "3.3.3",

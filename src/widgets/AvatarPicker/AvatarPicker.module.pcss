@@ -1,0 +1,18 @@
+.avatarPicker {
+	margin: 0;
+	padding: 0;
+	border: 0;
+
+	&__title {
+		width: 100%;
+		margin-bottom: var(--spectrum-spacing-100);
+		padding: 0;
+	}
+
+	&__grid {
+		display: grid;
+		grid-auto-rows: max-content;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: var(--spectrum-spacing-300);
+	}
+}
