@@ -1,19 +1,30 @@
-import React, { memo } from 'react'
+import React, { memo, useCallback } from 'react'
 import { cx } from 'class-variance-authority'
 
 import { RadioCard } from '@/components'
 
-import { avatars } from '@/constants'
-
+import { avatars, type AvatarEnum } from '@/constants'
 import styles from './AvatarPicker.module.pcss'
 
 type AvatarPickerType = {
 	name: string
-	avatar?: string
-	setAvatar: (value: string) => void
+	avatar?: AvatarEnum
+	setAvatar: (value: AvatarEnum) => void
 }
 
 function AvatarPicker({ name, avatar, setAvatar }: AvatarPickerType) {
+	const handlePickAvatar = useCallback(
+		(value: string) => {
+			setAvatar(value as AvatarEnum)
+
+			window.gtag('event', 'select_avatar', {
+				event_category: 'Avatar',
+				event_label: value,
+			})
+		},
+		[setAvatar],
+	)
+
 	return (
 		<fieldset className={styles.avatarPicker}>
 			<legend
@@ -34,7 +45,7 @@ function AvatarPicker({ name, avatar, setAvatar }: AvatarPickerType) {
 						checked={avatar === value}
 						src={src}
 						alt={alt}
-						onChange={setAvatar}
+						onChange={handlePickAvatar}
 					/>
 				))}
 			</div>

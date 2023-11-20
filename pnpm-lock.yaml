@@ -14,6 +14,9 @@ dependencies:
   '@spectrum-web-components/theme':
     specifier: 0.38.0
     version: 0.38.0
+  '@swc-react/asset':
+    specifier: ^0.40.0
+    version: 0.40.0
   '@swc-react/button':
     specifier: 0.38.0
     version: 0.38.0
@@ -26,12 +29,21 @@ dependencies:
   '@swc-react/picker':
     specifier: ^0.40.0
     version: 0.40.0
+  '@swc-react/progress-circle':
+    specifier: ^0.40.0
+    version: 0.40.0
   '@swc-react/textfield':
     specifier: ^0.40.0
     version: 0.40.0
   '@swc-react/theme':
     specifier: 0.38.0
     version: 0.38.0
+  '@types/gtag.js':
+    specifier: ^0.0.18
+    version: 0.0.18
+  '@types/uuid':
+    specifier: ^9.0.7
+    version: 9.0.7
   class-variance-authority:
     specifier: ^0.7.0
     version: 0.7.0
@@ -44,6 +56,12 @@ dependencies:
   react-dom:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
+  swr:
+    specifier: ^2.2.4
+    version: 2.2.4(react@18.2.0)
+  uuid:
+    specifier: ^9.0.1
+    version: 9.0.1
 
 devDependencies:
   '@adobe/ccweb-add-on-scripts':
@@ -1309,6 +1327,12 @@ packages:
       '@spectrum-web-components/shared': 0.40.0
     dev: false
 
+  /@spectrum-web-components/asset@0.40.0:
+    resolution: {integrity: sha512-SpnLlsPZH9lHxKY5ru14j4glosnIWQ2j8P57ODaK1K3KA1qqwwZbX+w43F/bVj/aHcGbaxvC8UDi98SADoTuXA==}
+    dependencies:
+      '@spectrum-web-components/base': 0.40.0
+    dev: false
+
   /@spectrum-web-components/base@0.38.0:
     resolution: {integrity: sha512-/UnWkWb+i6ZqQUYcAkKT1HdDQ1SIvuw2vKwIbHehunF7xh6tcDPPqZbuXLuA2RzQeeFtpqZcoTVxPNl4TswTug==}
     dependencies:
@@ -1494,6 +1518,13 @@ packages:
       '@spectrum-web-components/overlay': 0.40.0
     dev: false
 
+  /@spectrum-web-components/progress-circle@0.40.0:
+    resolution: {integrity: sha512-Bld64AiY1YGmX/kZM5XBrqaa5xHoTCmGhL+fGveZ+Z5oTBp8QNgJcSufjlzBtADlWUMxwOECiTwLyd0pxShw4g==}
+    dependencies:
+      '@spectrum-web-components/base': 0.40.0
+      '@spectrum-web-components/shared': 0.40.0
+    dev: false
+
   /@spectrum-web-components/reactive-controllers@0.40.0:
     resolution: {integrity: sha512-/MAzPtojXotKKtWIEapBec3nYfMFHXnJrxjDPGayVK+EfzjMxEOxjevqzAEtVRMlSMzxXGcneYrkuhkLCC/MFw==}
     dependencies:
@@ -1569,6 +1600,18 @@ packages:
       '@spectrum-web-components/base': 0.40.0
     dev: false
 
+  /@swc-react/asset@0.40.0:
+    resolution: {integrity: sha512-6tZJUJvK2d8x10TWnXH+Uwrsyp4FOX4b7DdYwcE3idlJbnCb0TNiYlUBNS3ShQnKXL5pj6QEmKEUlWHGSb7WtQ==}
+    peerDependencies:
+      next: ~13.4
+    peerDependenciesMeta:
+      next:
+        optional: true
+    dependencies:
+      '@lit-labs/react': 1.2.1
+      '@spectrum-web-components/asset': 0.40.0
+    dev: false
+
   /@swc-react/button@0.38.0:
     resolution: {integrity: sha512-AEMXiiYO6EudAoIzkl3DqTK/Ad+8giRDoEmKQVUvFky8Q/sCT75B/JtmdPW6g3aLNK9PwkqEpUGpRXVlw2Qmhg==}
     peerDependencies:
@@ -1615,6 +1658,18 @@ packages:
     dependencies:
       '@lit-labs/react': 1.2.1
       '@spectrum-web-components/picker': 0.40.0
+    dev: false
+
+  /@swc-react/progress-circle@0.40.0:
+    resolution: {integrity: sha512-00QsDvtCJLVGFhdUi+NztwKFBvJhmQtpI+AJ0T9WnbrSqWr8dTTbGYFDsw21RrnOxgK30DYvhQI5UPVRzdXtKA==}
+    peerDependencies:
+      next: ~13.4
+    peerDependenciesMeta:
+      next:
+        optional: true
+    dependencies:
+      '@lit-labs/react': 1.2.1
+      '@spectrum-web-components/progress-circle': 0.40.0
     dev: false
 
   /@swc-react/textfield@0.40.0:
@@ -1709,6 +1764,10 @@ packages:
       '@types/minimatch': 5.1.2
       '@types/node': 8.10.66
     dev: true
+
+  /@types/gtag.js@0.0.18:
+    resolution: {integrity: sha512-GJxnIvuXuVhKaHfsOdzGipoOoXq72y3mdcncc9h6i6E7nlz89zBEj2wrLM7bqO5Xk9Lm2B94MwdQsSwRlaPSWw==}
+    dev: false
 
   /@types/html-minifier-terser@6.1.0:
     resolution: {integrity: sha512-oh/6byDPnL1zeNXFrDXFLyZjkr1MsBG667IM792caf1L2UPOOMf65NFzjUH/ltyfwjAGfs1rsX1eftK0jC/KIg==}
@@ -1809,6 +1868,10 @@ packages:
 
   /@types/trusted-types@2.0.6:
     resolution: {integrity: sha512-HYtNooPvUY9WAVRBr4u+4Qa9fYD1ze2IUlAD3HoA6oehn1taGwBx3Oa52U4mTslTS+GAExKpaFu39Y5xUEwfjg==}
+    dev: false
+
+  /@types/uuid@9.0.7:
+    resolution: {integrity: sha512-WUtIVRUZ9i5dYXefDEAI7sh9/O7jGvHg7Df/5O/gtH3Yabe5odI3UWopVR1qbPXQtvOxWu3mM4XxlYeZtMWF4g==}
     dev: false
 
   /@types/yargs-parser@21.0.3:
@@ -2693,6 +2756,10 @@ packages:
       slice-ansi: 5.0.0
       string-width: 5.1.2
     dev: true
+
+  /client-only@0.0.1:
+    resolution: {integrity: sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==}
+    dev: false
 
   /clone-deep@4.0.1:
     resolution: {integrity: sha512-neHB9xuzh/wk0dIHweyAXv2aPGZIVk3pLMe+/RNzINf17fe0OG96QroktYAUm7SM1PBnzTabaLboqqxDyMU+SQ==}
@@ -6845,6 +6912,16 @@ packages:
     resolution: {integrity: sha512-ovssysQTa+luh7A5Weu3Rta6FJlFBBbInjOh722LIt6klpU2/HtdUbszju/G4devcvk8PGt7FCLv5wftu3THUA==}
     dev: true
 
+  /swr@2.2.4(react@18.2.0):
+    resolution: {integrity: sha512-njiZ/4RiIhoOlAaLYDqwz5qH/KZXVilRLvomrx83HjzCWTfa+InyfAjv05PSFxnmLzZkNO9ZfvgoqzAaEI4sGQ==}
+    peerDependencies:
+      react: ^16.11.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      client-only: 0.0.1
+      react: 18.2.0
+      use-sync-external-store: 1.2.0(react@18.2.0)
+    dev: false
+
   /synckit@0.8.5:
     resolution: {integrity: sha512-L1dapNV6vu2s/4Sputv8xGsCdAVlb5nRDMFU/E27D44l5U6cw1g0dGd45uLc+OXjNMmF4ntiMdCimzcjFKQI8Q==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -7153,6 +7230,14 @@ packages:
       punycode: 2.3.1
     dev: true
 
+  /use-sync-external-store@1.2.0(react@18.2.0):
+    resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
     dev: true
@@ -7170,6 +7255,11 @@ packages:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
     hasBin: true
     dev: true
+
+  /uuid@9.0.1:
+    resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
+    hasBin: true
+    dev: false
 
   /v8-compile-cache-lib@3.0.1:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}

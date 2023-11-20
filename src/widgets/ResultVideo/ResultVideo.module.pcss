@@ -1,0 +1,21 @@
+.resultVideo {
+	display: grid;
+	grid-auto-rows: max-content;
+	gap: var(--spectrum-spacing-100);
+
+	&__wrapper {
+		display: grid;
+		gap: var(--spectrum-spacing-100);
+		align-content: center;
+		justify-items: center;
+
+		aspect-ratio: 16 / 9;
+	}
+
+	&__media {
+		display: block;
+		aspect-ratio: 16 / 9;
+		width: 100%;
+		height: auto;
+	}
+}

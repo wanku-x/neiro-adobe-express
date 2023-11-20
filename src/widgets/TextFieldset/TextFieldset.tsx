@@ -6,15 +6,15 @@ import { FieldLabel } from '@swc-react/field-label'
 import { Picker } from '@swc-react/picker'
 import { MenuItem } from '@swc-react/menu'
 
-import { languages } from '@/constants'
+import { languages, type LanguageEnum } from '@/constants'
 
 import styles from './TextFieldset.module.pcss'
 
 type TextFieldsetType = {
 	text: string
 	setText: (value: string) => void
-	language: string | undefined
-	setLanguage: (value: string) => void
+	language: LanguageEnum | undefined
+	setLanguage: (value: LanguageEnum) => void
 }
 
 function TextFieldset({ text, setText, language, setLanguage }: TextFieldsetType) {
@@ -23,7 +23,14 @@ function TextFieldset({ text, setText, language, setLanguage }: TextFieldsetType
 		(e: Event) => {
 			const target = e.target as HTMLTextAreaElement
 
-			if (target) setText(target.value)
+			if (!target) return
+
+			setText(target.value)
+
+			window.gtag('event', 'text_change', {
+				event_category: 'Text',
+				event_label: target.value,
+			})
 		},
 		[setText],
 	)
@@ -32,7 +39,14 @@ function TextFieldset({ text, setText, language, setLanguage }: TextFieldsetType
 		(e: Event) => {
 			const target = e.target as HTMLTextAreaElement
 
-			if (target) setLanguage(target.value)
+			if (!target) return
+
+			setLanguage(target.value as LanguageEnum)
+
+			window.gtag('event', 'language_change', {
+				event_category: 'Language',
+				event_label: target.value,
+			})
 		},
 		[setLanguage],
 	)
