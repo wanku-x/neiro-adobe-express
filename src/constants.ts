@@ -83,3 +83,37 @@ export const languages: LanguageType[] = [
 		label: '🇸🇦 Arabic',
 	},
 ]
+
+export type VoiceType = {
+	value: string
+	src: string
+	alt: string
+}
+
+export const voices: VoiceType[] = [
+	{
+		value: 'zendaya',
+		src: 'https://i.ibb.co/cxcSDs3/zendaya.jpg',
+		alt: 'zendaya',
+	},
+	{
+		value: 'grande',
+		src: 'https://i.ibb.co/0BChvzk/grande.jpg',
+		alt: 'grande',
+	},
+	{
+		value: 'rebecca',
+		src: 'https://i.ibb.co/5BdMGHK/rebecca.jpg',
+		alt: 'rebecca',
+	},
+	{
+		value: 'holland',
+		src: 'https://i.ibb.co/zFQV0NN/holland.jpg',
+		alt: 'holland',
+	},
+	{
+		value: 'david',
+		src: 'https://i.ibb.co/6vkzygP/david.jpg',
+		alt: 'david',
+	},
+]
