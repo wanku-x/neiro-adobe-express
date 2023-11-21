@@ -15,6 +15,7 @@ function MainLayout() {
 	const [text, setText] = useState<string>('')
 	const [language, setLanguage] = useState<LanguageEnum | undefined>()
 	const [voice, setVoice] = useState<VoiceEnum | undefined>()
+	const [error, setError] = useState<string>('')
 
 	const {
 		error: ttsError,
@@ -32,25 +33,34 @@ function MainLayout() {
 	} = useSWRMutation(lipsyncAvatarsUrl, lipsyncAvatarsPost)
 
 	const generateVideo = useCallback(async () => {
-		gtag('event', 'generate_video', {
-			event_category: 'Generate video',
-			event_label: 'Generate video clicked',
-		})
-
 		try {
 			if (avatar && text && language && voice) {
 				ttsReset()
 				lipsyncAvatarsReset()
+				setError('')
 
 				const ttsResponse = await ttsTrigger({ text, language, voice })
+
+				if (ttsResponse.errorMessage || !ttsResponse.audio)
+					throw new Error(ttsResponse.errorMessage)
+
 				const lipsyncAvatarsResponse = await lipsyncAvatarsTrigger({
 					avatar,
 					ttsUrl: ttsResponse.audio.url,
 				})
+
+				if (lipsyncAvatarsResponse.errorMessage)
+					throw new Error(lipsyncAvatarsResponse.errorMessage)
 			}
 		} catch (error) {
-			console.error(error)
+			setError(error.message as string)
+			console.error(error.message)
 		}
+
+		gtag('event', 'generate_video', {
+			event_category: 'Generate video',
+			event_label: 'Generate video clicked',
+		})
 	}, [avatar, text, language, voice])
 
 	return (
@@ -71,7 +81,7 @@ function MainLayout() {
 					<ResultVideo
 						video={data?.avatarsLipsync?.url}
 						loading={ttsIsMutating || lipsyncAvatarsIsMutating}
-						error={ttsError || lipsyncAvatarsError}
+						error={ttsError || lipsyncAvatarsError || error}
 					/>
 				</div>
 			</div>

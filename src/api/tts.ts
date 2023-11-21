@@ -1,3 +1,4 @@
+import { type MutationFetcher } from 'swr/mutation'
 import { token, type LanguageEnum, type VoiceEnum } from '@/constants'
 import { v4 as uuidv4 } from 'uuid'
 
@@ -7,9 +8,23 @@ export type TtsPayloadType = {
 	voice: VoiceEnum
 }
 
+export type TtsResponseType = {
+	ID: string
+	statusCode: string
+	errorMessage: string
+	audio?: {
+		id: string
+		format: string
+		url: string
+	}
+}
+
 export const ttsUrl = 'https://gateway.neiro.ai/v4/tts'
 
-export const ttsPost = async (url: string, { arg }: { arg: TtsPayloadType }) => {
+export const ttsPost: MutationFetcher<TtsResponseType, string, TtsPayloadType> = async (
+	url,
+	{ arg },
+) => {
 	const res = await fetch(url, {
 		method: 'POST',
 		headers: {

@@ -1,3 +1,4 @@
+import { type MutationFetcher } from 'swr/mutation'
 import { token, type AvatarEnum } from '@/constants'
 import { v4 as uuidv4 } from 'uuid'
 
@@ -6,12 +7,24 @@ export type LipsyncAvatarsPayloadType = {
 	ttsUrl: string
 }
 
+export type LipsyncAvatarsResponseType = {
+	ID: string
+	statusCode: string
+	errorMessage: string
+	avatarsLipsync?: {
+		id: string
+		imagePreview: string
+		url: string
+	}
+}
+
 export const lipsyncAvatarsUrl = 'https://gateway.neiro.ai/v1/lipsync-avatars'
 
-export const lipsyncAvatarsPost = async (
-	url: string,
-	{ arg }: { arg: LipsyncAvatarsPayloadType },
-) => {
+export const lipsyncAvatarsPost: MutationFetcher<
+	LipsyncAvatarsResponseType,
+	string,
+	LipsyncAvatarsPayloadType
+> = async (url, { arg }) => {
 	const res = await fetch(url, {
 		method: 'POST',
 		headers: {

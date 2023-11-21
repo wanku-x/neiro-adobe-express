@@ -113,7 +113,7 @@ export enum VoiceEnum {
 	Grande = 'grande',
 	Rebecca = 'rebecca',
 	Holland = 'holland',
-	David = 'David',
+	David = 'david',
 }
 
 export type VoiceType = {

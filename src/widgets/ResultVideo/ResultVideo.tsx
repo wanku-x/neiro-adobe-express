@@ -1,12 +1,12 @@
 import React, { memo, useContext, useCallback, type SyntheticEvent } from 'react'
 import { Asset } from '@swc-react/asset'
 import { ProgressCircle } from '@swc-react/progress-circle'
+import { Button } from '@swc-react/button'
 
 import { AddOnSdkContext, type AddOnSdkType } from '@/app'
 import { getImageBlob } from '@/utils'
 
 import styles from './ResultVideo.module.pcss'
-import { Button } from '@swc-react/button'
 
 type ResultVideoType = {
 	video?: string
@@ -14,7 +14,7 @@ type ResultVideoType = {
 	error: boolean
 }
 
-function ResultVideo({ video, loading }: ResultVideoType) {
+function ResultVideo({ video, loading, error }: ResultVideoType) {
 	const addOnSdk = useContext<AddOnSdkType | undefined>(AddOnSdkContext)
 
 	const handleImageAdd = useCallback(async () => {
@@ -68,6 +68,13 @@ function ResultVideo({ video, loading }: ResultVideoType) {
 							Please allow 2-5 minutes...
 						</p>
 						<ProgressCircle size="l" indeterminate />
+					</>
+				) : error ? (
+					<>
+						<h3 className="spectrum-Heading spectrum-Heading--sizeXS">
+							Something went wrong
+						</h3>
+						<p className="spectrum-Body spectrum-Body--sizeM">Please try again later</p>
 					</>
 				) : (
 					<Asset variant="file" />
