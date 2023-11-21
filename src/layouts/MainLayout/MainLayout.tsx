@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react'
-import { cx } from 'class-variance-authority'
+import cx from 'clsx'
 import useSWRMutation from 'swr/mutation'
 
 import { Button } from '@swc-react/button'

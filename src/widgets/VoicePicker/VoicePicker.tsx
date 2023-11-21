@@ -1,5 +1,5 @@
 import React, { memo, useCallback } from 'react'
-import { cx } from 'class-variance-authority'
+import cx from 'clsx'
 
 import { RadioCard } from '@/components'
 

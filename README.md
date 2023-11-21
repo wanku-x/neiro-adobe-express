@@ -40,7 +40,7 @@ Before starting development, install the following extensions in VS Code (or you
 -   SWR-react
 -   PostCSS
 -   SWR
--   CVA
+-   clsx
 
 ## Tooling Stack
 

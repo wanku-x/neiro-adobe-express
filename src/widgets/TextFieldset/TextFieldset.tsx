@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useId } from 'react'
-import { cx } from 'class-variance-authority'
+import cx from 'clsx'
 
 import { Textfield } from '@swc-react/textfield'
 import { FieldLabel } from '@swc-react/field-label'
