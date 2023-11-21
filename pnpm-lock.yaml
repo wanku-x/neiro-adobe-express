@@ -8,9 +8,6 @@ dependencies:
   '@spectrum-css/typography':
     specifier: ^5.0.48
     version: 5.0.48(@spectrum-css/tokens@13.0.4)
-  '@spectrum-css/vars':
-    specifier: ^9.0.8
-    version: 9.0.8
   '@spectrum-web-components/theme':
     specifier: 0.38.0
     version: 0.38.0
@@ -47,9 +44,6 @@ dependencies:
   class-variance-authority:
     specifier: ^0.7.0
     version: 0.7.0
-  normalize.css:
-    specifier: ^8.0.1
-    version: 8.0.1
   react:
     specifier: 18.2.0
     version: 18.2.0
@@ -1311,10 +1305,6 @@ packages:
       '@spectrum-css/tokens': '>=13'
     dependencies:
       '@spectrum-css/tokens': 13.0.4
-    dev: false
-
-  /@spectrum-css/vars@9.0.8:
-    resolution: {integrity: sha512-rGfd7jqXOdR69bEjrRP58ynuIeJU0czPfwQvzhtCzg7jKVukV+efNHqrs086sC6xutB3W4TF71K/dZMr3oyTyg==}
     dev: false
 
   /@spectrum-web-components/action-button@0.40.0:
@@ -5285,10 +5275,6 @@ packages:
     resolution: {integrity: sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==}
     engines: {node: '>=0.10.0'}
     dev: true
-
-  /normalize.css@8.0.1:
-    resolution: {integrity: sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==}
-    dev: false
 
   /npm-run-path@4.0.1:
     resolution: {integrity: sha512-S48WzZW777zhNIrn7gxOlISNAqi9ZC/uQFnRdbeIHhZhCA6UqpkOT8T1G7BvfdgP4Er8gF4sUbaS0i7QvIfCWw==}

@@ -1,2 +1,6 @@
-export { ttsPost, type TtsPayloadType } from './tts'
-export { lipsyncAvatarsPost, type LipsyncAvatarsType } from './lipsyncAvatars'
+export { ttsPost, ttsUrl, type TtsPayloadType } from './tts'
+export {
+	lipsyncAvatarsPost,
+	lipsyncAvatarsUrl,
+	type LipsyncAvatarsPayloadType,
+} from './lipsyncAvatars'

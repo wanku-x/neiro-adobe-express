@@ -22,7 +22,6 @@
     ],
     "dependencies": {
         "@spectrum-css/typography": "^5.0.48",
-        "@spectrum-css/vars": "^9.0.8",
         "@spectrum-web-components/theme": "0.38.0",
         "@swc-react/asset": "^0.40.0",
         "@swc-react/button": "0.38.0",
@@ -35,7 +34,6 @@
         "@types/gtag.js": "^0.0.18",
         "@types/uuid": "^9.0.7",
         "class-variance-authority": "^0.7.0",
-        "normalize.css": "^8.0.1",
         "react": "18.2.0",
         "react-dom": "18.2.0",
         "swr": "^2.2.4",

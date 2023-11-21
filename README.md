@@ -1,16 +1,63 @@
-## About
+# NeiroAI Adobe Express
 
-This project has been created with _@adobe/create-ccweb-add-on_. As an example, this Add-on demonstrates how to get started with Add-on development using React and TypeScript.
+You can access the deployed version of the plugin here: https://new.express.adobe.com/new?category=addOns&claimCode=wihk24k24:3P783O49
 
-## Tools
+## Local Setup
 
--   HTML
--   CSS
--   React
+To run this project locally, you need to have pnpm package manager installed.
+
+Follow these steps to get started:
+
+```bash
+pnpm i --frozen-lockfile
+pnpm run start
+```
+
+## Deployment
+
+```bash
+pnpm i --frozen-lockfile
+pnpm run package
+```
+
+After packaging, upload the generated archive to Adobe Express.
+
+## Development Environment Setup
+
+Before starting development, install the following extensions in VS Code (or your preferred IDE):
+
+-   [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+-   [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+-   [PostCSS](https://marketplace.visualstudio.com/items?itemName=csstools.postcss)
+-   [PostCSS Intellisense](https://marketplace.visualstudio.com/items?itemName=vunguyentuan.vscode-postcss)
+-   [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+-   [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
+
+## Stack
+
 -   TypeScript
+-   React
+-   SWR-react
+-   PostCSS
+-   SWR
+-   CVA
 
-## Setup
+## Tooling Stack
 
-1. To install the dependencies, run `npm install`.
-2. To build the application, run `npm run build`.
-3. To start the application, run `npm run start`.
+-   ESLint
+-   Stylelint
+-   Prettier
+-   EditorConfig
+-   Husky
+-   Lint-staged
+
+## File Structure
+
+-   `api`: API handlers
+-   `app`: Root component
+-   `layouts`: Define the structural template of sections or pages
+-   `widgets`: Contains widgets that are used within the layouts
+-   `components`: Shared UI components
+-   `declarations`: Declaration TypeScript files
+-   `styles`: Shared PostCSS style files
+-   `utils`: Utility functions

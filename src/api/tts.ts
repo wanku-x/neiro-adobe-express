@@ -7,6 +7,8 @@ export type TtsPayloadType = {
 	voice: VoiceEnum
 }
 
+export const ttsUrl = 'https://gateway.neiro.ai/v4/tts'
+
 export const ttsPost = async (url: string, { arg }: { arg: TtsPayloadType }) => {
 	const res = await fetch(url, {
 		method: 'POST',

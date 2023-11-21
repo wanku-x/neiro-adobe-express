@@ -5,7 +5,7 @@ import useSWRMutation from 'swr/mutation'
 import { Button } from '@swc-react/button'
 
 import { AvatarPicker, ResultVideo, TextFieldset, VoicePicker } from '@/widgets'
-import { ttsPost, lipsyncAvatarsPost } from '@/api'
+import { ttsPost, ttsUrl, lipsyncAvatarsPost, lipsyncAvatarsUrl } from '@/api'
 import { type AvatarEnum, type LanguageEnum, type VoiceEnum } from '@/constants'
 
 import styles from './MainLayout.module.pcss'
@@ -21,7 +21,7 @@ function MainLayout() {
 		isMutating: ttsIsMutating,
 		trigger: ttsTrigger,
 		reset: ttsReset,
-	} = useSWRMutation('https://gateway.neiro.ai/v4/tts', ttsPost)
+	} = useSWRMutation(ttsUrl, ttsPost)
 
 	const {
 		data,
@@ -29,7 +29,7 @@ function MainLayout() {
 		isMutating: lipsyncAvatarsIsMutating,
 		trigger: lipsyncAvatarsTrigger,
 		reset: lipsyncAvatarsReset,
-	} = useSWRMutation('https://gateway.neiro.ai/v1/lipsync-avatars', lipsyncAvatarsPost)
+	} = useSWRMutation(lipsyncAvatarsUrl, lipsyncAvatarsPost)
 
 	const generateVideo = useCallback(async () => {
 		gtag('event', 'generate_video', {
@@ -43,10 +43,9 @@ function MainLayout() {
 				lipsyncAvatarsReset()
 
 				const ttsResponse = await ttsTrigger({ text, language, voice })
-
-				await lipsyncAvatarsTrigger({
+				const lipsyncAvatarsResponse = await lipsyncAvatarsTrigger({
 					avatar,
-					ttsUrl: await ttsResponse.audio.url,
+					ttsUrl: ttsResponse.audio.url,
 				})
 			}
 		} catch (error) {
